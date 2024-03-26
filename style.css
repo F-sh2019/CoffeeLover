@@ -1,0 +1,84 @@
+
+body{
+    background-image: url('images/coffee-background.jpg');
+    background-repeat: no;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  .main{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  
+  .head {
+   
+    text-align: center;
+    margin-top: 50px 0%;
+    
+  }
+  
+  .head h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .head h2 {
+    font-size: 1.8rem;
+    color: #8ee678;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+    color: #f7f4f4;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 4px solid #301707;
+    margin-right: 10px;
+  }
+  
+  .navigation a:hover {
+    background-color: #b97633;
+  }
+  
+  /* Image styles */
+  .head img {
+    width:70%;
+    height:30%;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: left;
+
+    margin: 0 auto;
+  }
+  
+  /* Random coffee button styles */
+  .random-coffee {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .random-coffee button {
+    
+    color: #0a0a0a;
+    font-weight:bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .random-coffee button:hover {
+    background-color: #b97633;
+  }
