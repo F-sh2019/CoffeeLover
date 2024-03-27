@@ -144,34 +144,19 @@ function getCoffeeTypeFromPage() {
 
 function displaySearchdata(data){
     
-    // const ingsearch1 = document.getElementById('result');
-    // ingsearch1.innerHTML="salaaakmmm";
-
     
-    // const allIngredients = new Set(); // Use a Set to store unique ingredients
-
-    // data.forEach(coffee => {
-    //    coffee.ingredients.forEach(ingredient => allIngredients.add(ingredient));
-    //  });
-  
-    // const coffeeList = document.querySelector('.coffee-list'); 
-    // coffeeList.innerHTML = ""; 
-   
-    // allIngredients.forEach(ing => {
-        
-    //     const ingsearch = document.createElement('div');
-    //    // ingsearch.classList.add('ingsearch') ;
-    //     ingsearch.innerHTML=`<input type='checkbox' value=${ing}><lable>${ing}</lable>`;   
-    //     coffeeList.appendChild(ingsearch);  
-    // });
     const coffeeList = document.querySelector('.coffee-list');
     coffeeList.innerHTML = ""; // Clear existing content
   
     const allIngredients = new Set(); // Use a Set to store unique ingredients
   
     data.forEach(coffee => {
-      coffee.ingredients.forEach(ingredient => allIngredients.add(ingredient));
-  
+              coffee.ingredients.forEach(ingredient => allIngredients.add(ingredient));
+     });
+   
+
+
+
       // Create element for each coffee with heading and collapsible details
       const coffeeItem = document.createElement('div');
       coffeeItem.classList.add('coffee-item');
@@ -180,7 +165,7 @@ function displaySearchdata(data){
                               `;
   
       coffeeList.appendChild(coffeeItem);
-    });
+   
   
     // After the loop, populate ingredient checkboxes
     populateIngredientCheckboxes([...allIngredients]);
