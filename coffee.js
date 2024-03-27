@@ -103,12 +103,13 @@ async function main() {
     const url = window.location.href; 
     const coffeeType = getCoffeeTypeFromPage(); // Function to determine coffee type (explained below)
     const coffeeData = await getCoffeeData(coffeeType);
+    
     if (url.includes('search-coffee'))
     {
-        displaySearchdata(coffeeData); 
+        //displaySearchdata(coffeeData); 
     }
     else{
-    displayCoffee(coffeeData);
+        displayCoffee(coffeeData);
     }
 }
 
@@ -122,19 +123,21 @@ function getCoffeeTypeFromPage() {
       return 'hot';
     } else if (url.includes('iced-coffee')) {
       return 'iced';
-    } else if (url.includes('search-coffee')){
-        
+    }  
+    //  else if (url.includes('search-coffee')){
+    //     //Event listener for search input
+    //     const radios = document.querySelectorAll('input')
+    //     for (const radio of radios) {
+    //     radio.onclick = (e) => {
+    //     //document.getElementById('test').innerHTML=e.target.value;
+    //     //return(e.target.value);
+    //     const coffeeType = getCoffeeTypeFromPage(); // Function to determine coffee type (explained below)
+    //     const coffeeData = await getCoffeeData(coffeeType);
+    //     displaySearchdata(coffeeData); 
+    //    }
+    //    }
        
-        //Event listener for search input
-        const radios = document.querySelectorAll('input')
-            for (const radio of radios) {
-            radio.onclick = (e) => {
-                return(e.target.value);
-                
-            }
-            }
-       
-    }
+    // }
       else {
       // Handle unexpected page (optional)
       console.error('Could not determine coffee type from URL');
@@ -142,19 +145,51 @@ function getCoffeeTypeFromPage() {
     }
 }
 
+function searchCoffeetype()
+{
+  const url = window.location.href; // Get current page URL
+  if (url.includes('search-coffee')){
+    //Event listener for search input
+    const radios = document.querySelectorAll('input')
+    for (const radio of radios) {
+    radio.onclick = (e) => {
+    document.getElementById('test').innerHTML=e.target.value;
+    //return(e.target.value);
+   // const coffeeType = getCoffeeTypeFromPage(); // Function to determine coffee type (explained below)
+    const coffeeData =  getCoffeeData(e.target.value);
+    displaySearchdata(coffeeData); 
+    }
+   }
+   
+  }
+  else {
+  // Handle unexpected page (optional)
+  console.error('Could not determine coffee type from URL');
+  return null;
+}
+}
+
+
 function displaySearchdata(data){
     
-    
+  // const p = document.getElementById('test');
+  // p.innerHTML = "test"; // 
+
     const ingredientList = document.querySelector('.ingredient-list');
-    ingredients.innerHTML = ""; // Clear existing content
+    //ingredientList.innerHTML = "hhhh"; // Clear existing content
   
     const allIngredients = new Set(); // Use a Set to store unique ingredients
   
     data.forEach(coffee => {
               coffee.ingredients.forEach(ingredient => allIngredients.add(ingredient));
+             
+
      });
    
-     allIngredients.forEach(ingredient => {
+     ingredientList.innerHTML = data.size;
+
+      allIngredients.forEach(ingredient => {
+      
       const listItem = document.createElement('li');
       const checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
@@ -162,9 +197,10 @@ function displaySearchdata(data){
       listItem.innerText = ingredient;
       listItem.appendChild(checkbox);
       ingredientList.appendChild(listItem);
+    
     });
 
-
+  
      
 }               
 
