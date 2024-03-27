@@ -145,8 +145,8 @@ function getCoffeeTypeFromPage() {
 function displaySearchdata(data){
     
     
-    const coffeeList = document.querySelector('.coffee-list');
-    coffeeList.innerHTML = ""; // Clear existing content
+    const ingredientList = document.querySelector('.ingredient-list');
+    ingredients.innerHTML = ""; // Clear existing content
   
     const allIngredients = new Set(); // Use a Set to store unique ingredients
   
@@ -154,38 +154,21 @@ function displaySearchdata(data){
               coffee.ingredients.forEach(ingredient => allIngredients.add(ingredient));
      });
    
+     allIngredients.forEach(ingredient => {
+      const listItem = document.createElement('li');
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = ingredient; // Set unique ID for each checkbox
+      listItem.innerText = ingredient;
+      listItem.appendChild(checkbox);
+      ingredientList.appendChild(listItem);
+    });
 
 
-
-      // Create element for each coffee with heading and collapsible details
-      const coffeeItem = document.createElement('div');
-      coffeeItem.classList.add('coffee-item');
-  
-      coffeeItem.innerHTML = `<ul class="ingredient-list"></ul>
-                              `;
-  
-      coffeeList.appendChild(coffeeItem);
-   
-  
-    // After the loop, populate ingredient checkboxes
-    populateIngredientCheckboxes([...allIngredients]);
+     
 }               
 
 
-function populateIngredientCheckboxes(ingredients) {
-    const ingredientLists = document.querySelectorAll('.ingredient-list');
-  
-    ingredients.forEach(ingredient => {
-      ingredientLists.forEach(list => {
-        const listItem = document.createElement('li');
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.id = ingredient; // Set unique ID for each checkbox
-        listItem.innerText = ingredient;
-        listItem.appendChild(checkbox);
-        list.appendChild(listItem);
-      });
-    });
-  }
+
    
 
