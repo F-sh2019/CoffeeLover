@@ -7,11 +7,11 @@
         <title>search-coffee</title>
     </head>
     <boby>
-        <h1>Find coffee based on favorite ingredients</h1>
+        <h1 class="searchhead">Find coffee based on favorite ingredients</h1>
         
 
         <div class="coffee-type">
-          <h2>Coffee Type</h2>
+          <h2> Select the Coffee Type</h2>
           <input type="radio" id="hot-coffee" name="coffeeType" value="hot"   onclick="searchCoffeetype('hot')" checked>
           <label for="hot-coffee">Hot Coffee</label>
           <input type="radio" id="iced-coffee" name="coffeeType" value="iced" onclick="searchCoffeetype('iced')">
@@ -25,7 +25,9 @@
           <ul class="ingredient-list">
             </ul>
         </div>
-        <button id="search"  onclick="search_list()">search</button>
+        <div class="searchbutton">
+          <button  id="search"  onclick="search_list()" class="button">search</button>
+        </div>
       
         <div class="coffee-results" id="coffee-results" onclick="">
           <h2>Coffee Results</h2>

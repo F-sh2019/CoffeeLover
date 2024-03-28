@@ -17,6 +17,7 @@ body {
   background-size: cover;
   }
   
+
   .head {
    
     text-align: center;
@@ -28,8 +29,14 @@ body {
   .head h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    
   }
   
+  .searchhead{
+    text-align:center;
+    color: white;
+  }
+
   .head h2 {
     font-size: 1.8rem;
     color: #8ee678;
@@ -110,4 +117,28 @@ span{
   grid-template-columns: 1fr 1fr 1fr;
   color:whitesmoke
 }
+.coffee-type{
+  display: inline-block;
+  color: whitesmoke;
+  margin-left: 30px;
+}
+.ingredients{
+  color: white;
+  margin-left: 30px;
+}
+.searchbutton{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 
+}
+.button{
+   border-radius: 20%;
+   font-size: large;
+   
+  }
+
+.coffee-results{
+  margin-left: 30px;
+  color: #f7f4f4;
+}

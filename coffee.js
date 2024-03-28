@@ -231,7 +231,7 @@ function displayCoffeeResults(coffeeData) {
   } else {
     coffeeData.forEach(coffee => {
       const listItem = document.createElement('li');
-      listItem.innerText = `${coffee.title} `;
+      listItem.innerText = `${coffee.title} (${coffee.ingredients}) `;
       coffeeResultsList.appendChild(listItem);
     });
   }
