@@ -2,6 +2,7 @@
 
 const hotCoffeeUrl = 'https://api.sampleapis.com/coffee/hot'; // Assuming hot coffee endpoint
 const icedCoffeeUrl = 'https://api.sampleapis.com/coffee/iced'; // Assuming iced coffee endpoint
+let searchData ;
 
 function handleError(error) {
   console.error('Error fetching coffee data:', error);
@@ -134,8 +135,8 @@ async function searchCoffeetype(selectedval) {
     const radios = document.querySelectorAll('input');
     
         try {
-          const coffeeData = await getCoffeeData(selectedval);
-          displaySearchdata(coffeeData);
+          searchData= await getCoffeeData(selectedval);
+          displaySearchdata(searchData);
         } catch (error) {
           console.error("Error fetching coffee data:", error);
           
@@ -180,9 +181,62 @@ function displaySearchdata(data){
     
   
      
-}               
+}   
+function search_list()
+{
+   // const p = document.getElementById('test');
+  // p.innerHTML = "test"; // 
+  //document.getElementById('coffee-results').innerHTML=searchData.length ;
+
+  const selectedIngredients=[];
+  const ingredientList = document.querySelector('.ingredient-list'); 
+  const checkboxes = ingredientList.querySelectorAll('input[type="checkbox"]:checked');
+
+  checkboxes.forEach(checkbox => selectedIngredients.push(checkbox.id));
+  filteredCoffeeData = [];
+  
+  //document.getElementById('coffee-results').innerHTML=selectedIngredients.length ;
+  
+     searchData.forEach(coffee => {
+ 
+         let hasAtLeastOneIngredient = false;
+         selectedIngredients.forEach(ingredient => {
+           if (coffee.ingredients.includes(ingredient)) {
+             hasAtLeastOneIngredient = true;
+             return; // Exit the loop if at least one ingredient is found
+           }
+          });
+       
+        
+         if (hasAtLeastOneIngredient) {
+           filteredCoffeeData.push(coffee);
+         }
+       }
+  );
+  //document.getElementById('coffee-results').innerHTML=filteredCoffeeData.length ;
+  displayCoffeeResults(filteredCoffeeData); // Call function to display results
+   
+
+}  
 
 
+// Function to display filtered coffee results
+function displayCoffeeResults(coffeeData) {
+  const coffeeResultsList = document.querySelector('.coffee-list');
+  coffeeResultsList.innerHTML = ""; // Clear existing results
+ // coffeeResultsList.innerHTML = coffeeData.length;
 
+  if (coffeeData.length === 0) {
+    coffeeResultsList.innerHTML = "<p>No coffee found matching your criteria.</p>";
+  } else {
+    coffeeData.forEach(coffee => {
+      const listItem = document.createElement('li');
+      listItem.innerText = `${coffee.title} `;
+      coffeeResultsList.appendChild(listItem);
+    });
+  }
+
+  document.getElementById('coffee-results').style.display = 'block'; // Show results section
+}
    
 
