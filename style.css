@@ -105,4 +105,9 @@ span{
   color: #8ee678;    
 }
 
+.ingredient-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color:whitesmoke
+}
 

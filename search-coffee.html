@@ -12,9 +12,9 @@
 
         <div class="coffee-type">
           <h2>Coffee Type</h2>
-          <input type="radio" id="hot-coffee" name="coffeeType" value="hot"   onclick="searchCoffeetype()" checked>
+          <input type="radio" id="hot-coffee" name="coffeeType" value="hot"   onclick="searchCoffeetype('hot')" checked>
           <label for="hot-coffee">Hot Coffee</label>
-          <input type="radio" id="iced-coffee" name="coffeeType" value="iced" onclick="searchCoffeetype()">
+          <input type="radio" id="iced-coffee" name="coffeeType" value="iced" onclick="searchCoffeetype('iced')">
           <label for="iced-coffee">Iced Coffee</label>
           <p id="test"></p>
         </div>
@@ -25,8 +25,9 @@
           <ul class="ingredient-list">
             </ul>
         </div>
+        <button id="search"  onclick="saerch_list()">search</button>
       
-        <div class="coffee-results" id="coffee-results">
+        <div class="coffee-results" id="coffee-results" onclick="">
           <h2>Coffee Results</h2>
           <ul class="coffee-list">
             </ul>

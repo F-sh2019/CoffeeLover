@@ -111,25 +111,15 @@ main();
 // Function to determine coffee type from the page 
  function getCoffeeTypeFromPage() {
     const url = window.location.href; // Get current page URL
-    if (url.includes('hot-coffee')) {
+    if (url.includes('hot-coffee') )  {
       return 'hot';
     } else if (url.includes('iced-coffee')) {
       return 'iced';
     }  
-    //   else if (url.includes('search-coffee')){
-    //     //Event listener for search input
-    //     const radios = document.querySelectorAll('input')
-    //     for (const radio of radios) {
-    //     radio.onclick = (e) => {
-    //     //document.getElementById('test').innerHTML=e.target.value;
-    //     //return(e.target.value);
-    //     const coffeeType = getCoffeeTypeFromPage(); // Function to determine coffee type (explained below)
-    //     const coffeeData = await getCoffeeData(coffeeType);
-    //     displaySearchdata(coffeeData); 
-    //    }
-    //    }
-       
-    //  }
+      else if (url.includes('search-coffee')){
+        searchCoffeetype('hot') ;
+    
+      }
       else {
       // Handle unexpected page (optional)
       console.error('Could not determine coffee type from URL');
@@ -137,25 +127,22 @@ main();
     }
 }
 
-async function searchCoffeetype() {
+async function searchCoffeetype(selectedval) {
   const url = window.location.href; // Get current page URL
   if (url.includes('search-coffee')) {
     // Event listener for search input
     const radios = document.querySelectorAll('input');
-    for (const radio of radios) {
-      radio.onclick = async (e) => {
-        document.getElementById('test').innerHTML = e.target.value;
-
+    
         try {
-          const coffeeData = await getCoffeeData(e.target.value);
+          const coffeeData = await getCoffeeData(selectedval);
           displaySearchdata(coffeeData);
         } catch (error) {
           console.error("Error fetching coffee data:", error);
           
         }
-      };
-    }
-  } else {
+    
+  } 
+  else {
     // Handle unexpected page (optional)
     console.error('Could not determine coffee type from URL');
     return null;
@@ -169,7 +156,7 @@ function displaySearchdata(data){
   // p.innerHTML = "test"; // 
 
     const ingredientList = document.querySelector('.ingredient-list');
-    ingredientList.innerHTML = "hhhh"; // Clear existing content
+    ingredientList.innerHTML = ""; // Clear existing content
   
     const allIngredients = new Set(); // Use a Set to store unique ingredients
   
@@ -179,8 +166,6 @@ function displaySearchdata(data){
 
      });
    
-     ingredientList.innerHTML = data.length;
-
       allIngredients.forEach(ingredient => {
       
       const listItem = document.createElement('li');
@@ -192,7 +177,7 @@ function displaySearchdata(data){
       ingredientList.appendChild(listItem);
     
     });
-
+    
   
      
 }               
