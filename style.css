@@ -57,8 +57,9 @@ body {
 
 /* Image styles */
 .head img {
-  width: 70%;
+  width: 40%;
   height: 30%;
+  padding-top: 5%;
   padding-left: 5%;
   padding-right: 5%;
   justify-content: left;
