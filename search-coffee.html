@@ -1,41 +1,50 @@
 <!DOCTYPE html>
-<HTML>
-    <head>
-        <meta charset="UTF-8" lan="en">
-        <link rel="stylesheet" href="style.css" >
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>search-coffee</title>
-    </head>
-    <boby>
-        <h1 class="searchhead">Find coffee based on favorite ingredients</h1>
-        
+<html>
+  <head>
+    <meta charset="UTF-8" lan="en" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>search-coffee</title>
+  </head>
+  <body>
+    <h1 class="searchhead">
+      Coffee for your taste buds<br/>Filter by ingredients
+    </h1>
 
-        <div class="coffee-type">
-          <h2> Select the Coffee Type</h2>
-          <input type="radio" id="hot-coffee" name="coffeeType" value="hot"   onclick="searchCoffeetype('hot')" checked>
-          <label for="hot-coffee">Hot Coffee</label>
-          <input type="radio" id="iced-coffee" name="coffeeType" value="iced" onclick="searchCoffeetype('iced')">
-          <label for="iced-coffee">Iced Coffee</label>
-          <p id="test"></p>
-        </div>
-        
-        <div class="ingredients" id="ingredients-section">
-          
-          <h2>Ingredients (Select Coffee Type First)</h2>
-          <ul class="ingredient-list">
-            </ul>
-        </div>
-        <div class="searchbutton">
-          <button  id="search"  onclick="search_list()" class="button" >search</button>
-        </div>
-      
-        <div class="coffee-results" id="coffee-results" onclick="">
-          <h2>Coffee Results</h2>
-          <ul class="coffee-list">
-            </ul>
-          </div>
-          <script src="coffee.js"></script>
-       
-        
-    </boby>
-</HTML>
+    <div class="coffee-type">
+      <h2>Select the Coffee Type</h2>
+      <input
+        type="radio"
+        id="hot-coffee"
+        name="coffeeType"
+        value="hot"
+        onclick="searchCoffeetype('hot')"
+        checked
+      />
+      <label for="hot-coffee">Hot Coffee</label>
+      <input
+        type="radio"
+        id="iced-coffee"
+        name="coffeeType"
+        value="iced"
+        onclick="searchCoffeetype('iced')"
+      />
+      <label for="iced-coffee">Iced Coffee</label>
+      <p id="test"></p>
+    </div>
+
+    <div class="ingredients" id="ingredients-section">
+      <h2>Ingredients (Select Coffee Type First)</h2>
+      <ul class="ingredient-list"></ul>
+    </div>
+    <div class="searchbutton">
+      <button id="search" onclick="search_list()" class="button">search</button>
+    </div>
+
+    <div class="coffee-results" id="coffee-results" onclick="">
+      <h2>Coffee Results</h2>
+      <ul class="coffee-list"></ul>
+    </div>
+    <script src="coffee.js"></script>
+  </body>
+</html>
