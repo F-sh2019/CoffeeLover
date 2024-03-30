@@ -1,49 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" lan="en" />
-    <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>search-coffee</title>
-  </head>
-  <body>
-    <div class="title">
-      <h1>Coffee Lover</h1>
+
+<head>
+  <meta charset="UTF-8" lan="en" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>search-coffee</title>
+</head>
+
+<body>
+  <div class="title">
+    <h1>Coffee Lover</h1>
+  </div>
+
+  <nav class="toolbar">
+    <img src="images/coffee-cafe-icon-coffee-icon-design.jpg" height="50px" width="50px" />
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </nav>
+  <hr>
+  <div class="main">
+    <div class="head">
+      <img src="images/coffee-twocups.jpg" alt="Hot and Iced Coffee" />
+      <hr>
+      <h2 class="searchhead">
+        Coffee for your taste buds<br />Filter by ingredients
+      </h2>
     </div>
-    
-    <nav class="toolbar">
-      <img src="images/coffee-cafe-icon-coffee-icon-design.jpg" height="50px" width="50px"/>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-    </nav>
-    <hr>
-    <div class="main">
-      <div class="head">
-        <img src="images/coffee-twocups.jpg" alt="Hot and Iced Coffee" />
-        <hr>
-        <h2 class="searchhead">
-          Coffee for your taste buds<br/>Filter by ingredients
-        </h2>
-      </div>
-     
+
     <div class="coffee-type">
       <h3>Select the Coffee Type</h3>
-      <input
-        type="radio"
-        id="hot-coffee"
-        name="coffeeType"
-        value="hot"
-        onclick="searchCoffeetype('hot')"
-        checked
-      />
+      <input type="radio" id="hot-coffee" name="coffeeType" value="hot" onclick="searchCoffeetype('hot')" checked />
       <label for="hot-coffee">Hot Coffee</label>
-      <input
-        type="radio"
-        id="iced-coffee"
-        name="coffeeType"
-        value="iced"
-        onclick="searchCoffeetype('iced')"
-      />
+      <input type="radio" id="iced-coffee" name="coffeeType" value="iced" onclick="searchCoffeetype('iced')" />
       <label for="iced-coffee">Iced Coffee</label>
       <p id="test"></p>
     </div>
@@ -61,5 +50,6 @@
       <ul class="coffee-list"></ul>
     </div>
     <script src="coffee.js"></script>
-  </body>
+</body>
+
 </html>

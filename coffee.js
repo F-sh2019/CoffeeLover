@@ -58,10 +58,9 @@ function displayCoffee(data) {
       coffeeItem.innerHTML = `
                               <h3> ${coffee.title}</h3>
                               <p>Ingredient: ${coffee.ingredients.join(
-                                ", "
-                              )} <img src=${
-        coffee.image
-      } height="100px" width="100px"/></p>
+        ", "
+      )} <img src=${coffee.image
+        } height="100px" width="100px"/></p>
                               <p id="description">${coffee.description}</p>`;
 
       coffeeList.appendChild(coffeeItem);
