@@ -18,7 +18,23 @@ body {
 
 .head {
   text-align: center;
-  margin-top: 100px 0%;
+  margin-top: 20px 0%;
+}
+/* Image styles */
+.head img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  padding-top: 0;
+  padding-left: 0%;
+  padding-right: 5%;
+  justify-content: left;
+   margin: 0 ;
+}
+.title{
+  text-align: center;
+   margin-top: 0px;
+   background-color: burlywood;
 }
 
 .head h1 {
@@ -32,14 +48,21 @@ body {
 }
 
 .head h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #8ee678;
+  position: absolute; 
+  top: 380px; 
+  left: 0; 
+  width: 100%; 
+ 
 }
 
 .navigation {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   margin-top: 50px;
+  padding-left: 10%;
 }
 
 .navigation a {
@@ -47,44 +70,22 @@ body {
   color: #f7f4f4;
   font-weight: bold;
   padding: 10px 20px;
+  padding-left: 10%;
   border: 4px solid #301707;
-  margin-right: 10px;
+  margin-right: 100px;
 }
 
 .navigation a:hover {
   background-color: #b97633;
 }
-
-/* Image styles */
-.head img {
-  width: 40%;
-  height: 30%;
-  padding-top: 5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  justify-content: left;
-
-  margin: 0 auto;
+.navigation img{
+  height: 110px;
+  padding: 20px 20px;
+  padding-left: 10%;
 }
 
-/* Random coffee button styles */
-.random-coffee {
-  text-align: center;
-  margin-top: 50px;
-}
 
-.random-coffee button {
-  color: #0a0a0a;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
-.random-coffee button:hover {
-  background-color: #b97633;
-}
 
 .coffee-list {
   
@@ -137,4 +138,41 @@ span {
   color: #f7f4f4;
   overflow-y: auto;
   max-height: 300px;
+}
+
+.toolbar{
+  display: flexbox;
+  padding: 0;
+  justify-content:space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.toolbar  {
+  display: flex;
+  
+}
+
+.toolbar a{
+  color: white;
+  text-align: center;
+  padding: 20px ;
+  text-decoration: none;
+}
+.toolbar  a:hover {
+  background-color: #b97633;
+}
+.toolbar image{
+  float: left;
+}
+.home{
+  float:left ;
+}
+
+.about{
+  color:white;
+  font-size: medium;
+  font-weight: 200;
+  padding-left: 20px;
 }
