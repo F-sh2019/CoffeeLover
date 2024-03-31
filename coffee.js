@@ -1,5 +1,5 @@
-const hotCoffeeUrl = "https://api.sampleapis.com/coffee/hot"; // Assuming hot coffee endpoint
-const icedCoffeeUrl = "https://api.sampleapis.com/coffee/iced"; // Assuming iced coffee endpoint
+const hotCoffeeUrl = "https://api.sampleapis.com/coffee/hot"; //  hot coffee endpoint
+const icedCoffeeUrl = "https://api.sampleapis.com/coffee/iced"; // iced coffee endpoint
 let searchData = null; //searched data
 let url = null; // the active page
 
@@ -91,22 +91,23 @@ function displayCoffee(data) {
       );
       paginationContainer.appendChild(nextButton);
     } else {
-      nextButton.disabled = true; // Assuming a nextButton variable exists within the if block
+      nextButton.disabled = true; 
     }
   }
 
-  // Call the function to display the first page (page 1)
+
   displayCurrentPage(currentPage);
 }
 
 // Get initial hot coffee data and display it on the page
 async function main() {
-  const coffeeType = getCoffeeTypeFromPage(); // Function to determine coffee type
+  const coffeeType = getCoffeeTypeFromPage(); 
   const coffeeData = await getCoffeeData(coffeeType);
   if (!url.includes("search-coffee")) displayCoffee(coffeeData);
 }
 
 main();
+
 // Function to determine coffee type from the page
 function getCoffeeTypeFromPage() {
   url = window.location.href; // Get current page URL
